@@ -1,0 +1,28 @@
+{
+    "name": "hatslogic/module-referrer",
+    "description": "Website referrer module",
+    "require": {
+        "magento/framework": ">100.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.9",
+    "license": [
+        "GPL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "2Hatslogic",
+            "email": "hello@2hatslogic.com",
+            "homepage": "https://www.2hatslogic.com",
+            "role": "Leader"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Hatslogic\\Referrer\\": ""
+        }
+    }
+}

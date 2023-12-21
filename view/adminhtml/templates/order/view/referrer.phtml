@@ -1,0 +1,31 @@
+<?php
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+
+ /* $block \Magento\Sales\Block\Adminhtml\Order\View */
+
+$order = $block->getOrder();
+$helper = $this->helper(\Hatslogic\Referrer\Helper\Data::class);
+$referrerTitle = $helper->getConfig('hlreferrer/general/referrer_title');?>
+<?php if ($order->getReferrer()) : ?>
+    <section class="admin__page-section order-view-billing-shipping">
+        <div class="admin__page-section-title">
+            <span class="title"><?= /* @noEscape */ __('Customer Feedback') ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <div class="admin__page-section-item order-payment-method">
+                <div class="admin__page-section-item-title">
+                    <span class="title"><?= /* @noEscape */ $referrerTitle; ?></span>
+                </div>
+                <div class="admin__page-section-item-content">
+                    <div class="order-payment-method-title">
+                    <p><?= /* @noEscape */  $order->getReferrer(); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>

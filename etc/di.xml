@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="hlreferrer_index_listing_data_source" xsi:type="string">Hatslogic\Referrer\Model\ResourceModel\Referrer\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="referrer" xsi:type="string">sales_order.referrer</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Checkout\Model\PaymentInformationManagement">
+        <plugin name="order_guest_save" type="Hatslogic\Referrer\Plugin\PaymentInformationManagementPlugin" sortOrder="10"/>
+    </type>
+    <type name="Magento\Checkout\Model\GuestPaymentInformationManagement">
+        <plugin name="order_customer_save" type="Hatslogic\Referrer\Plugin\GuestPaymentInformationManagementPlugin" sortOrder="10"/>
+    </type>
+</config>

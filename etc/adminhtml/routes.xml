@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="hlreferrer" frontName="hlreferrer">
+            <module name="Hatslogic_Referrer"/>
+        </route>
+    </router>
+</config>

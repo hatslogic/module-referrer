@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Hatslogic" translate="label" sortOrder="999" class="hatslogic-tab">
+            <label>Hatslogic Extensions</label>
+        </tab>
+        <section id="hlreferrer" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>How Did You Find Us</label>
+            <tab>Hatslogic</tab>
+            <resource>Hatslogic_Referrer::referrer_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+               <field id="display_title" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Title</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="referrer_title" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                </field>
+                <field id="referrer_placeholder" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Placeholder</label>
+                </field>
+                <field id="required" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Required Entry</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_area" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Area</label>
+                    <source_model>Hatslogic\Referrer\Model\Config\Source\DisplayArea</source_model>
+                    <comment>This option doesn't apply for "Check Out with Multiple Address" option. The How did you find us field will be displayed under "Ship to Multiple Addresses" table.</comment>
+                </field>
+                <field id="referrer_options" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Options</label>
+                    <frontend_model>Hatslogic\Referrer\Block\Adminhtml\Config\ReferrerOptions</frontend_model>
+                    <backend_model>Hatslogic\Referrer\Model\Config\ArraySerializer</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::marketing">
+                    <resource id="Hatslogic_Referrer::mainref" title="Hatslogic How Did You Find Us" sortOrder="999">
+                        <resource id="Hatslogic_Referrer::referrer_configs" title="Configuration" sortOrder="10" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Hatslogic_Referrer::referrer_config" title="How Did You Find Us"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

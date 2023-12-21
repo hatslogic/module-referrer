@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2021 Hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote" resource="checkout" engine="innodb" comment="Sales Flat Quote">
+        <column xsi:type="text" name="referrer" nullable="true" comment="Website Referrer" />
+    </table>
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Flat Order">
+        <column xsi:type="text" name="referrer" nullable="true" comment="Website Referrer" />
+    </table>
+    <table name="sales_order_grid" resource="sales" engine="innodb" comment="Sales Flat Order Grid">
+        <column xsi:type="text" name="referrer" nullable="true" comment="Website Referrer" />
+    </table>
+    <table name="Hatslogic_referrer" resource="default" engine="innodb" comment="Hatslogic Referrer Table">
+        <column xsi:type="int" name="id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="text" name="answer" nullable="false" comment="answer"/>
+        <column xsi:type="text" name="user_customer" nullable="false" comment="user_customer"/>
+        <column xsi:type="text" name="user_guest" nullable="false" comment="user_guest"/>
+        <column xsi:type="text" name="answer_count" nullable="false" comment="answer_count"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="updated_at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="Hatslogic_REFERER_ANSWER" indexType="fulltext">
+            <column name="answer"/>
+        </index>
+    </table>
+</schema>

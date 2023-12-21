@@ -1,0 +1,33 @@
+<?php
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+
+?>
+<?php
+/**
+ * @var $block \Hatslogic\Referrer\Block\SuccessReferal
+ */
+?>
+<?php
+$displayPages = $block->getAllDisplayPages();
+if (in_array($block->getDisplayArea(), $displayPages)
+&& count($block->getReferralOptions()) > 1
+&& $block->isEnabled()):?>
+        <div class="field  ref <?= $block->getRequired() ?'required' : '';?>">
+              <?php if ($block->canTitleBeDisplayed()):?>
+                <label class="label" for="ref"><?= /*noEscape*/  $block->getReferrerTitle(); ?></label>
+              <?php endif; ?>
+              <div class="control">
+                        <?php  $options = $block->getReferralOptions();  ?>
+                        <select name="ref" <?= $block->getRequired() ?'required' : '';?>>
+                                <?php foreach ($options as $option):?>
+                                <option value=<?= /*noEscape*/ $option['value'] ?>>
+                                    <?= /*noEscape*/ $option['label'] ?></option>
+                                <?php endforeach ?>;
+                        </select>
+                </div>
+        </div>
+<?php endif ;?>

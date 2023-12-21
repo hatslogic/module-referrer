@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <hlreferrer>
+            <general>
+                <display_title>1</display_title>
+                <referrer_title>How Did You Find Us?</referrer_title>
+                <referrer_placeholder>Select Option</referrer_placeholder>
+                <display_area>shipping</display_area>
+            </general>
+        </hlreferrer>
+    </default>
+</config>

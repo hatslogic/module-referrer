@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author 2hatslogic
+ * @copyright Copyright (c) 2023 2hatslogic (https://www.2hatslogic.com)
+ * @package Hatslogic_Referrer
+ */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Hatslogic_Referrer::mainref"
+            title="Hatslogic How Did You Find Us"
+            module="Hatslogic_Referrer"
+            resource="Hatslogic_Referrer::mainref"
+            parent="Magento_Backend::marketing"
+            sortOrder="999" />
+        <add id="Hatslogic_Referrer::referrer_configs"
+            title="Configuration"
+            module="Hatslogic_Referrer"
+            action="adminhtml/system_config/edit/section/hlreferrer"
+            resource="Hatslogic_Referrer::referrer_configs"
+            parent="Hatslogic_Referrer::mainref"
+            sortOrder="10" />
+    </menu>
+</config>
